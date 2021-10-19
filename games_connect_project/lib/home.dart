@@ -7,11 +7,16 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text("Games Connect"),
+      centerTitle: true,
+      backgroundColor: Colors.black,
+      ),
       body: Container(
         //largura responsiva
         width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
+        height: MediaQuery.of(context).size.height,
 
+        decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [Colors.black.withBlue(60), Colors.black.withBlue(20)],
             begin: Alignment.topLeft,
@@ -19,31 +24,44 @@ class Home extends StatelessWidget {
           ),
 
         ),
+        
         child: SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Container(
-            child: Row(
-              children: [
-                Column(
-                  children: [
-                    WidgetFunction('Audi','lib/imagens/audi_q8.jpg'),
-                    WidgetFunction('Audi','lib/imagens/audi_q8.jpg'),
-                    WidgetFunction('Audi','lib/imagens/audi_q8.jpg'),
-                    
-                  ],
-                ),
-                Column(
-                  children: [
-                    WidgetFunction('Audi','lib/imagens/audi_q8.jpg'),
-                    WidgetFunction('Audi','lib/imagens/audi_q8.jpg'),
-                    WidgetFunction('Audi','lib/imagens/audi_q8.jpg'),
-                  ],
-                ),
-              ],
-            ),
+          scrollDirection: Axis.vertical,
+          child: Row(
+            children: [
+              Column(
+                children: [
+                  WidgetFunction('God of War Ragnarok','lib/imagens/download-4.jpg'),
+                  WidgetFunction('God of War Ragnarok 2','lib/imagens/download-4.jpg'),
+                  WidgetFunction('God of War Ragnarok 3','lib/imagens/download-4.jpg'),
+                  
+                ],
+              ),
+
+            ],
           ),
+
         ),
+
       ),
+
+      drawer: Drawer(
+        child: Container(
+          width: MediaQuery.of(context).size.width*.1,
+          decoration: BoxDecoration(
+
+            gradient: LinearGradient(
+              colors: [Colors.black.withBlue(60), Colors.black.withBlue(20)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+
+          ),
+
+        ),
+
+      ),
+
     );
   }
 }

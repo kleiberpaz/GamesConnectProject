@@ -15,15 +15,15 @@ class WidgetFunction extends StatelessWidget {
 
       // MARGENS (externo)
       //margin: EdgeInsets.all(5),
-      //margin: EdgeInsets.only(top: 5),
-      margin: EdgeInsets.fromLTRB(30, 20, 10, 0),
+      //margin: EdgeInsets.only(top: 10),
+      margin: EdgeInsets.fromLTRB(5, 10, 2, 0),
 
       // ESPAÇAMENTO (interno)
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.all(5),
       //padding: EdgeInsets.only(top: 5),
       //padding: EdgeInsets.fromLTRB(30, 20, 30, 0),
 
-      width: MediaQuery.of(context).size.width * .40,
+      width: MediaQuery.of(context).size.width * .95,
       //height: 300,
       
       //DECORAÇÃO
@@ -38,19 +38,32 @@ class WidgetFunction extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(20))
        ),
 
-      child: Column(
-        children: [
-          Text(this.nome, 
-          style: TextStyle(
-              fontSize: 28,
-              fontWeight: FontWeight.bold,
-              color: Colors.deepPurple[100],
-            ),  
+      child: Row(
+        children: [   
+          Container(
+            // FOTO CIRCULAR DO JOGO
+            child:ClipRRect(
+              borderRadius: BorderRadius.circular(100.0),
+              child: Image.network(
+                  this.imagem,
+                  width: MediaQuery.of(context).size.width * .35,
+
+              ),
+            ), 
           ),
-          
-          SizedBox(height: 10),
-          // FOTO DO CARRO
-          Image.asset(this.imagem)
+          Container(
+            margin: EdgeInsets.only(left: 25),
+            child:Text(
+              this.nome, 
+              textAlign: TextAlign.right,
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),  
+            ) 
+          )     
+
         ],
       ),
     );
