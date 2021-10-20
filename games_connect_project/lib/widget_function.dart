@@ -16,14 +16,14 @@ class WidgetFunction extends StatelessWidget {
       // MARGENS (externo)
       //margin: EdgeInsets.all(5),
       //margin: EdgeInsets.only(top: 10),
-      margin: EdgeInsets.fromLTRB(5, 10, 2, 0),
+      margin: EdgeInsets.fromLTRB(5, 60, 2, 0),
 
       // ESPAÇAMENTO (interno)
       padding: EdgeInsets.all(5),
       //padding: EdgeInsets.only(top: 5),
       //padding: EdgeInsets.fromLTRB(30, 20, 30, 0),
 
-      width: MediaQuery.of(context).size.width * .95,
+      width: MediaQuery.of(context).size.width * .80,
       //height: 300,
       
       //DECORAÇÃO
@@ -46,7 +46,7 @@ class WidgetFunction extends StatelessWidget {
               borderRadius: BorderRadius.circular(100.0),
               child: Image.network(
                   this.imagem,
-                  width: MediaQuery.of(context).size.width * .35,
+                  width: MediaQuery.of(context).size.width * .15,
 
               ),
             ), 
